@@ -10,7 +10,7 @@ import {
 export const Photo = ({ photo, onOpen }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(photo)}>
-      <View style={styles.photo}>
+      <View style={styles.wrapper}>
         <ImageBackground
           style={styles.image}
           source={{ uri: photo.urls.small }}
@@ -25,7 +25,7 @@ export const Photo = ({ photo, onOpen }) => {
 };
 
 const styles = StyleSheet.create({
-  photo: {
+  wrapper: {
     marginBottom: 15,
     overflow: 'hidden'
   },

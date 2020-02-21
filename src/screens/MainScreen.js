@@ -8,20 +8,12 @@ import { THEME } from '../theme';
 
 export const MainScreen = ({ navigation }) => {
   const dispatch = useDispatch();
+  const allPhotos = useSelector(state => state.photo.allPhotos);
+  const loading = useSelector(state => state.photo.loading);
 
   useEffect(() => {
     dispatch(loadPhotos(URL));
   }, [dispatch]);
-
-  const openPhotoHandler = photo => {
-    navigation.navigate('Photo', {
-      photoId: photo.id,
-      date: photo.created_at
-    });
-  };
-
-  const allPhotos = useSelector(state => state.photo.allPhotos);
-  const loading = useSelector(state => state.photo.loading);
 
   if (loading) {
     return (
@@ -31,8 +23,15 @@ export const MainScreen = ({ navigation }) => {
     );
   }
 
+  const openPhotoHandler = photo => {
+    navigation.navigate('Photo', {
+      photoId: photo.id,
+      date: photo.created_at
+    });
+  };
+
   return (
-    <View style={{ padding: 10 }}>
+    <View style={styles.wrapper}>
       <FlatList
         data={allPhotos}
         keyExtractor={photo => photo.id.toString()}
@@ -49,5 +48,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  wrapper: {
+    padding: 15
   }
 });

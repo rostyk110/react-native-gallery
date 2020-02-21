@@ -26,7 +26,9 @@ export const AppNavigation = () => (
         name='PhotoZoom'
         component={PhotoZoomScreen}
         options={{
-          headerShown: false
+          headerStyle: {
+            backgroundColor: '#000'
+          }
         }}
       />
     </Stack.Navigator>

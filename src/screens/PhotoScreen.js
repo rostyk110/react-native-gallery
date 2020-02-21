@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
+  Text
 } from 'react-native';
 import { useSelector } from 'react-redux';
 
@@ -38,12 +39,13 @@ export const PhotoScreen = ({ route, navigation }) => {
           style={styles.image}
           resizeMode='contain'
         />
+        <Text style={styles.title}>@{photo.user.username}</Text>
       </View>
     </TouchableOpacity>
   );
 };
 
-const screenHeight = Dimensions.get('window').height - 80;
+const screenHeight = Dimensions.get('window').height - 150;
 
 const styles = StyleSheet.create({
   image: {
@@ -51,7 +53,13 @@ const styles = StyleSheet.create({
     height: screenHeight
   },
   container: {
+    padding: 20,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  title: {
+    alignSelf: 'flex-end',
+    fontFamily: 'open-italic',
+    fontSize: 16
   }
 });
