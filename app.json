@@ -1,29 +1,24 @@
 {
   "expo": {
-    "name": "Test application",
+    "name": "Test app",
     "slug": "TestApp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/rn-icon.png",
+    "orientation": "default",
+    "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/rn-splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#242832"
+      "image": "./assets/logo.png",
+      "backgroundColor": "#fff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }

@@ -4,7 +4,8 @@ import {
   StyleSheet,
   ImageBackground,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 
 export const Photo = ({ photo, onOpen }) => {
@@ -14,11 +15,7 @@ export const Photo = ({ photo, onOpen }) => {
         <ImageBackground
           style={styles.image}
           source={{ uri: photo.urls.small }}
-        >
-          <View style={styles.textWrap}>
-            <Text style={styles.title}>{photo.user.name}</Text>
-          </View>
-        </ImageBackground>
+        ></ImageBackground>
       </View>
     </TouchableOpacity>
   );
@@ -27,20 +24,10 @@ export const Photo = ({ photo, onOpen }) => {
 const styles = StyleSheet.create({
   wrapper: {
     marginBottom: 15,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   image: {
-    width: '100%',
-    height: 200
+    width: Dimensions.get('screen').width / 2 - 15,
+    height: Dimensions.get('screen').width / 2 - 15,
   },
-  textWrap: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingVertical: 5,
-    alignItems: 'center',
-    width: '100%'
-  },
-  title: {
-    color: '#fff',
-    fontFamily: 'open-regular'
-  }
 });

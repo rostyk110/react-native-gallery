@@ -1,3 +1,3 @@
 export const THEME = {
-  MAIN_COLOR: '#303f9f'
+  MAIN_COLOR: '#176141',
 };

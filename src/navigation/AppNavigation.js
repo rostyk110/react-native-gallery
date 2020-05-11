@@ -11,8 +11,9 @@ import { THEME } from '../theme';
 const screenOptions = {
   headerTintColor: Platform.OS === 'ios' ? THEME.MAIN_COLOR : '#fff',
   headerStyle: {
-    backgroundColor: Platform.OS === 'ios' ? '#fff' : THEME.MAIN_COLOR
-  }
+    backgroundColor: Platform.OS === 'ios' ? '#fff' : THEME.MAIN_COLOR,
+  },
+  headerTitleAlign: 'center',
 };
 
 const Stack = createStackNavigator();
@@ -27,8 +28,8 @@ export const AppNavigation = () => (
         component={PhotoZoomScreen}
         options={{
           headerStyle: {
-            backgroundColor: '#000'
-          }
+            backgroundColor: '#000',
+          },
         }}
       />
     </Stack.Navigator>
